@@ -1,3 +1,5 @@
+print("Ваше имя:")
 first_name = input()
+print("Ваша фамилия:")
 last_name = input()
 print("Вас зовут: " + first_name + " " + last_name)
