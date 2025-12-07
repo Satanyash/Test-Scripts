@@ -22,7 +22,6 @@ def test_1_post_positive():
 
 def test_1_post_negative():
     # Создание проекта с пустым телом запроса
-    token = "Wrong token"
     authorization = {}
     authorization["Authorization"] = f"Bearer {token}"
     project = {}
