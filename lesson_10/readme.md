@@ -3,3 +3,4 @@
 ### pytest --alluredir=./allure-result
 ### allure serve allure-result/
 ## Изучите отчет выполнения теста, который открылся в браузере
+# Ключевая информация находится во вкладке "Behaviors"
