@@ -7,11 +7,18 @@ from pages.CartPage import CartPage
 from pages.CheckoutPageOne import CheckoutPageOne
 from pages.CheckoutPageTwo import CheckoutPageTwo
 
+@allure.suite("Тесты магазина одежды")
+@allure.epic("Магазин")
 @allure.title("Проверка магазина")
 @allure.description("Авторизация, добавление товаров в корзину, ввод информации покупателя и проверка итоговой суммы")
 @allure.feature("Авторизация, покупка и проверка результата")
-@allure.severity("critical")
+@allure.severity("BLOCKER")
 def test_shopping():
+    """
+        Эта функция проверяет авторизацию, добавление
+        товаров в корзину, ввод данных покупателя и 
+        соответствие итоговой суммы к оплате
+    """
     with allure.step("Запуск браузера Edge"):
         driver = webdriver.Edge()
     with allure.step("Отметка товаров для покупки"):
@@ -29,5 +36,5 @@ def test_shopping():
     result = checkout_page_two.result()
     with allure.step("Закрытие браузера"):
         driver.quit()
-    with allure.step("Проверка соответствия итоговой суммы"):
+    with allure.step(f"Проверка соответствия суммы {result}"):
         assert result == "Total: $58.29"

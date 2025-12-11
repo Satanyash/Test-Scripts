@@ -7,14 +7,24 @@ class LoginPage:
 
     @allure.step("Открытие страницы авторизации")  
     def __init__(self, _driver):
+        """
+            Эта функция принимает на вход драйвер и переходит 
+            на страницу авторизации и ожидает ее загрузки при 
+            создании экземпляра класса
+        """
         self.driver = _driver
         self.driver.get("https://www.saucedemo.com/")
         WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, "//div[text()='Swag Labs']"))
         )
 
-    @allure.step("Авторизация с данными пользователя: {username}, {password}")  
-    def login(self, username, password):
+    @allure.step("Авторизация с логином: {username}, и паролем: {password}")  
+    def login(self, username: str, password: str):
+        """
+            Эта функция принимает на вход текстовые значения 
+            и вводит данные для авторизации и нажимает кнопку 
+            входа
+        """
         self.driver.find_element(By.CSS_SELECTOR, "#user-name").clear()
         self.driver.find_element(By.CSS_SELECTOR, "#user-name").send_keys(username)
         self.driver.find_element(By.CSS_SELECTOR, "#password").clear()
