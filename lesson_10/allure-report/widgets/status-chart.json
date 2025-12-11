@@ -1,0 +1,1 @@
+[{"uid":"2426dcf89b62b510","name":"Проверка калькулятора","time":{"start":1765458242360,"stop":1765458248667,"duration":6307},"status":"passed","severity":"critical"},{"uid":"f876f7c60e01bc31","name":"Проверка магазина","time":{"start":1765458248834,"stop":1765458257983,"duration":9149},"status":"passed","severity":"blocker"}]
